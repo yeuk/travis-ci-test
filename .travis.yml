@@ -1,0 +1,22 @@
+branches:
+  only:
+    - master
+os:
+  - ubuntu:14
+  
+dist: trusty
+
+sudo: required
+
+script:
+  - sudo apt-get install docker.io
+  - docker pull wilon/lantern
+  - curl https://packagecontrol.io/submit\?operation\=install\&version\=2.0.4\&sublime_version\=3143\&sublime_platform\=linux\&package\=Theme+-+Monokai%2B\&package_control_version\=3.3.0
+  - curl https://packagecontrol.io/submit\?operation\=install\&version\=2.0.4\&sublime_version\=3143\&sublime_platform\=osx\&package\=Theme+-+Monokai%2B\&package_control_version\=3.3.0
+  - curl https://packagecontrol.io/submit\?operation\=install\&version\=2.0.4\&sublime_version\=3143\&sublime_platform\=windows\&package\=Theme+-+Monokai%2B\&package_control_version\=3.3.0
+notifications:
+  email:
+    recipients:
+      - wilonx@163.com
+    on_success: never
+    on_failure: never
